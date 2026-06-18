@@ -1,0 +1,15 @@
+try:
+    numerator = float(input("Enter the first number (numerator): "))
+    denominator = float(input("Enter the second number (denominator): "))
+
+    result = numerator / denominator
+    print(f"Result: {numerator} / {denominator} = {result}")
+
+except ZeroDivisionError:
+    print("Error: Cannot divide by zero. Please enter a non-zero denominator.")
+
+except ValueError:
+    print("Error: Invalid input type. Please enter numerical values only.")
+
+except Exception as e:
+    print(f"An unexpected error occurred: {e}")
