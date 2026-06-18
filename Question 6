@@ -1,0 +1,7 @@
+student_a = Student("Carlos", 94)
+student_b = Student("Diana", 73)
+student_c = Student("Evan", 42)
+
+print(f"Student: {student_a.name} | Grade: {student_a.calculate_grade()}")
+print(f"Student: {student_b.name} | Grade: {student_b.calculate_grade()}")
+print(f"Student: {student_c.name} | Grade: {student_c.calculate_grade()}")
