@@ -1,0 +1,14 @@
+def calculate_simple_interest(principal, rate=0.05, time=1):
+    interest = principal * rate * time
+    return interest
+
+result_positional = calculate_simple_interest(10000, 0.08, 3)
+print(f"Positional arguments interest: {result_positional}")
+
+result_keyword = calculate_simple_interest(
+    time=5, rate=0.06, principal=5000
+)
+print(f"Keyword arguments interest: {result_keyword}")
+
+result_default = calculate_simple_interest(2000)
+print(f"Default arguments interest: {result_default}")
