@@ -1,0 +1,17 @@
+def analyze_numbers(numbers):
+    even_count = 0
+    odd_sum = 0
+
+    for num in numbers:
+        if num % 2 == 0:
+            even_count += 1
+        else:
+            odd_sum += num
+
+    return even_count, odd_sum
+
+sample_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+evens, odds_total = analyze_numbers(sample_list)
+
+print(f"Count of even numbers: {evens}")
+print(f"Sum of odd numbers: {odds_total}")
