@@ -1,0 +1,19 @@
+filename = "students.txt"
+
+student_data = [
+    {"name": "Carlos", "marks": 94},
+    {"name": "Diana", "marks": 73},
+    {"name": "Evan", "marks": 42},
+]
+
+with open(filename, "w") as file:
+    for student in student_data:
+        file.write(f"{student['name']},{student['marks']}\n")
+print(f"Data successfully written to {filename}.\n")
+
+print("Reading Student Records:")
+print("-" * 25)
+with open(filename, "r") as file:
+    for line in file:
+        name, marks = line.strip().split(",")
+        print(f"Student: {name:<8} | Marks: {marks}")
