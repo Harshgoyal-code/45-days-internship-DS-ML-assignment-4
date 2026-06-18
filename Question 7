@@ -1,0 +1,42 @@
+class BankAccount:
+
+    def __init__(self, owner, initial_balance=0.0):
+        self.owner = owner
+        self.__balance = initial_balance
+
+    def deposit(self, amount):
+        if amount > 0:
+            self.__balance += amount
+            print(f"Deposited: ${amount:.2f}")
+        else:
+            print("Deposit amount must be positive!")
+
+    def withdraw(self, amount):
+        if amount <= 0:
+            print("Withdrawal amount must be positive!")
+        elif amount > self.__balance:
+            print("Error: Insufficient funds!")
+        else:
+            self.__balance -= amount
+            print(f"Withdrew: ${amount:.2f}")
+
+    def get_balance(self):
+        return self.__balance
+
+
+# Demonstration:
+account = BankAccount("Sarah", 500.0)
+
+# 1. Interacting through proper channels
+account.deposit(150.0)
+account.withdraw(50.0)
+print(f"Current Balance: ${account.get_balance():.2f}")
+
+# 2. Testing error handling
+account.withdraw(1000.0)  # Triggers insufficient funds
+
+# 3. Attempting direct private access (Will raise an AttributeError)
+try:
+    print(account.__balance)
+except AttributeError:
+    print("\nAccess Denied: Cannot read '__balance' directly outside the class.")
