@@ -1,0 +1,27 @@
+numbers_file = "numbers.txt"
+
+try:
+    total_sum = 0
+    count = 0
+
+    with open(numbers_file, "r") as file:
+        for line in file:
+            cleaned_line = line.strip()
+            if cleaned_line:
+                total_sum += float(cleaned_line)
+                count += 1
+
+    if count > 0:
+        average = total_sum / count
+        print(f"File '{numbers_file}' processed successfully:")
+        print(f"● Total Sum: {total_sum}")
+        print(f"● Average:   {average:.2f}")
+    else:
+        print(f"The file '{numbers_file}' exists but contains no numeric data.")
+
+except FileNotFoundError:
+    print(f"Error: The file '{numbers_file}' was not found.")
+    print("Please create the file with some numbers and try again.")
+
+except ValueError:
+    print("Error: The file contains invalid, non-numeric data characters.")
