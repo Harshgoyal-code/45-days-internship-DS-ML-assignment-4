@@ -1,0 +1,25 @@
+class Student:
+
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+
+    def calculate_grade(self):
+        if self.marks >= 90:
+            return "A"
+        elif self.marks >= 80:
+            return "B"
+        elif self.marks >= 70:
+            return "C"
+        elif self.marks >= 60:
+            return "D"
+        else:
+            return "F"
+
+
+# Example usage:
+student1 = Student("Alice", 85)
+student2 = Student("Bob", 58)
+
+print(f"{student1.name}'s Grade: {student1.calculate_grade()}")
+print(f"{student2.name}'s Grade: {student2.calculate_grade()}")
